@@ -175,6 +175,30 @@ top:-30rem;
     
     }
 
+    #mainHome{
+      position:absolute;
+      left: -30rem;
+      top:-30rem;
+      
+      
+      }
+      
+      #mainPort{
+        position:absolute;
+        left: -30rem;
+        top:-28rem;
+        
+        
+        }
+        
+      
+        #mainAbout{
+          position:absolute;
+          left: -30rem;
+          top:-26rem;
+          
+          
+          }
 
 .portfolio {
 position: absolute;
