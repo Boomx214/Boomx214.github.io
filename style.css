@@ -59,6 +59,11 @@ body {
 
 }
 
+
+
+
+
+
 p1 {
 position: absolute;
 left: 35rem;
@@ -250,7 +255,19 @@ left:20rem;
 
 
 
+
+
 }
+
+.project4 {
+position:absolute;
+top:100rem;
+
+
+
+}
+
+
 
 
 a {
