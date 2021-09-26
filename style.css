@@ -12,38 +12,90 @@ canvas {
 }
 
 
+#aboutme{
+position:absolute;
+top:14.5rem;
+left:18rem;
+color:white;
+}
+
+
+#Portfolio{
+position:absolute;
+top:-28.5rem;
+left:-30rem;
+z-index:2;
+
+}
+
+
+#Music{
+
+  position:absolute;
+  top:-30rem;
+  left:-30rem;
+  z-index:2;
+      }   
 #Home{
 
   position:absolute;
-  top:2rem;
-  left:4rem;
-  z-index:3;
-      }
-
-#About{
-
-  position:absolute;
-  top:4rem;
-  left:4rem;
-  z-index:3;
-      }
-   
-#Portfolio{
-
-  position:absolute;
-  top:6rem;
-  left:4rem;
-  z-index:3;
-      }
-
-    
-#home{
-
-  position:absolute;
-  top:30.5rem;
-  left:43.5rem;
+  top:-33rem;
+  left:-30rem;
   z-index:2;
       }
+
+
+  #About{
+  position: absolute;
+  color: white;
+  left: -30rem;
+  top: -31.5rem;
+  z-index:2;
+        }
+
+        
+          
+          
+#musicShowcase{
+
+position:absolute;
+top:0rem;
+
+
+z-index:1;
+
+}      
+
+#Music2{
+
+  position:absolute;
+  top:10rem;
+  left:6rem;
+  z-index:2;
+      }   
+      #Portfolio2{
+
+        position:absolute;
+        top:11.6rem;
+        left:6rem;
+        z-index:2;
+            }   
+#Home2{
+
+  position:absolute;
+  top:7rem;
+  left:6rem;
+  z-index:2;
+      }
+
+
+  #About2{
+  position: absolute;
+  color: white;
+  left: 6rem;
+  top: 8.5rem;
+  z-index:2;
+        }
 
 
 body {
@@ -59,11 +111,6 @@ body {
 
 }
 
-
-
-
-
-
 p1 {
 position: absolute;
 left: 35rem;
@@ -78,12 +125,6 @@ left: 8rem;
 }
 
 
-.about{
-position: absolute;
-color: white;
-left: 20rem;
-top: 15rem;
-}
 
 .greece{
 position: absolute;
@@ -154,6 +195,13 @@ top: 1.3rem;
 
 
 }
+#tabcontent2p{
+  position:absolute;
+  left: -30rem;
+  top: 20px;
+  
+  
+  }
 
   .tabcontent{
 position:absolute;
@@ -180,30 +228,6 @@ top:-30rem;
     
     }
 
-    #mainHome{
-      position:absolute;
-      left: -30rem;
-      top:-30rem;
-      
-      
-      }
-      
-      #mainPort{
-        position:absolute;
-        left: -30rem;
-        top:-28rem;
-        
-        
-        }
-        
-      
-        #mainAbout{
-          position:absolute;
-          left: -30rem;
-          top:-26rem;
-          
-          
-          }
 
 .portfolio {
 position: absolute;
@@ -255,19 +279,7 @@ left:20rem;
 
 
 
-
-
 }
-
-.project4 {
-position:absolute;
-top:100rem;
-
-
-
-}
-
-
 
 
 a {
