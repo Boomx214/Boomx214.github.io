@@ -88,6 +88,13 @@ z-index:1;
   z-index:2;
       }
 
+#home{
+position:absolute;
+left:43rem;
+top:25rem;
+z-index:2;
+}
+
 
   #About2{
   position: absolute;
