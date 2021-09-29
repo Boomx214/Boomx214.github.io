@@ -11,6 +11,14 @@ canvas {
   display: block;
 }
 
+#processing{
+position:absolute;
+top:100rem;
+
+
+
+}
+
 
 #aboutme{
 position:absolute;
@@ -327,4 +335,5 @@ top: 350px;
 left: 285px;
 
 }
+
 
