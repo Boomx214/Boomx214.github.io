@@ -6,10 +6,27 @@ html, body {
   background-image: url("DSC_0502.png");
   
 }
+
+
+
 canvas {
 
   display: block;
 }
+
+#lost{
+position:absolute;
+left: 20rem;
+top: 15rem;
+}
+
+
+#intro{
+  position:absolute;
+  left: 35rem;
+  top: 15rem;
+  }
+
 
 #processing{
 position:absolute;
