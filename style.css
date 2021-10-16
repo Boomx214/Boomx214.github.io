@@ -7,7 +7,12 @@ html, body {
   
 }
 
+button{
+width: 15rem;
+height: 15rem;
 
+
+}
 
 canvas {
 
@@ -27,6 +32,12 @@ top: 15rem;
   top: 15rem;
   }
 
+
+#cloud{
+  position:absolute;
+  left:50rem;
+  top: 15rem;
+  }
 
 #processing{
 position:absolute;
