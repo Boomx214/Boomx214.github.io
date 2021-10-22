@@ -18,33 +18,14 @@ noCanvas();
 
 function draw() {
   background(220);
-document.getElementById("lost").onclick(mouseClicked());
+document.getElementById("lost").onclick(myFunction());
 }
 
 
-function mouseClicked() {
-if(lost.isPlaying()){
-lost.stop();
-
-
-} else if(lost.isPaused()){
-  lost.play();
-}
-if(cloud.isPlaying()){
-  cloud.stop();
-  
-  
-  } else if(cloud.isPaused()){
-    cloud.play();
+function playMusic(){
+  var music = new Audio('cloud..wav');
+  music.play();
   }
-  if(intro.isPlaying()){
-    intro.stop();
-    
-    
-    } else if(intro.isPaused()){
-      intro.play();
-    }
-}
 
 
 

@@ -9,7 +9,8 @@ this.move = 0;
 
 }
 display(){
-    for (let x=0; x < width; x++) {
+  /*  
+  for (let x=0; x < width; x++) {
         this.move += 0.001
       this.noiseVal = noise((width,x + this.move)*this.noiseScale, 20*this.noiseScale);
        this.noiseVal3 = noise((width,x + (this.move) * 2)*this.noiseScale2, 20*this.noiseScale2);
@@ -33,9 +34,11 @@ display(){
      
       
     }
-
-
-
+*/
+push();
+imageMode(CENTER);
+image(back,width/2, height/2, width*1.5,width/1.3)
+pop();
 }
 
 }

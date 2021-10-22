@@ -25,6 +25,14 @@ let line4= -100;
 
 /////////in use///////////
 let bgNum = 1;
+let pY;
+let pY2;
+let pulse = [];
+let pulseNum = 1;
+let alph = 0;
+let songCount = 300;
+let back;
+let lr;
 let img;
 let bong;
 let enter;
@@ -73,7 +81,14 @@ let attackNum = 1;
 let shots = [];
 let shotNum = 1;
 let shake = 50;
+let real;
+let aura;
 let songIsPlaying = true;
+let laser;
+let laser2;
+let font;
+let boss;
+let ship;
 const dead = [
 "GAME OVER LOOOOSERRR",
 "dang you're trash at this",
@@ -92,6 +107,15 @@ function preload(){
 bong = loadSound('Taco Bell_Bong_SFX.mp3');
 enter = loadSound('space.mp3');
 img = loadGif('lightning.gif')
+aura = loadGif('output-onlinegiftools-3.gif')
+laser = loadGif('output-onlinegiftools-2.gif')
+laser2 = loadGif('noemi-coute-laser.gif')
+font = loadFont('Minecraft.ttf')
+back = loadGif('Pixel-cave-city-OC-GIF-on-Imgur.gif')
+boss = loadGif('20dcae4d034b577df3e5e39daaf9cc03.gif');
+real = loadSound('Ecraze - Get Real (Crow REMIX).mp3')
+ship = loadGif('vehicle-1-preview.gif');
+leroy = loadSound("S2 E7 wants mom to know she looks cool and doesnt plan on changing.mp3");
 }
 
 
@@ -99,6 +123,14 @@ img = loadGif('lightning.gif')
 function setup() {
   
   createCanvas(windowWidth, windowHeight);
+  if(int(millis()/400) % 2 == 0 && songCount == 0){
+  pY = random(20, height-20);
+  pY2 = random(20,height-20);
+  } else {
+
+
+  }
+  textFont(font);
 mode = 1;
 if(mode == -1){
 
@@ -107,6 +139,9 @@ if(mode == -1){
   
   
   }
+
+
+
 }
 if(mode == 0){
 
@@ -128,7 +163,7 @@ start.push(new StartScreen());
   for (var i = 0; i < 10; i++){
 
   
-    player.push(new Player(false,random(0, width), random(0, height),playerSize, 'r'));
+    player.push(new Player(1100,250));
   }
   for (var i = 0; i < elixrNum; i++){
 
@@ -156,6 +191,7 @@ start.push(new StartScreen());
     bg.push(new Terrain());
   }
   if(mode == 1){
+
   for (var i = 0; i < wavesNum; i++) {
 
     waves[i].display();
@@ -221,23 +257,35 @@ if(timer <=5 && timer > 0 && score3 % 3 == 0 && al < 255)
   if(timer <= 3 && timer > 1){
     push();
     noStroke();
-    fill(255,0,0,130);  
+    fill(218,1,128,130);
+    //fill(255,0,0,130);  
     yPos= random(40,500);
     
     for (var i = 0; i < player.length; i++) {
       
       p1 = player[i].getVal();
-      
+
     }
 
 
 
 
-   if(score3 % 3 !== 0){
+   if(score3 % 3 !== 0 && score3 % 2 !== 0){
+     
     p = width;
     rectMode(CENTER);
     rect(p/2,p1,width,3);
+   
 
+   }
+
+   if(score3 % 2 == 0){
+     push();
+     rectMode(CENTER);
+    lr = 1100
+    //rect(lr,height/2,90,height)
+
+pop();
    }
     
     //rect(e,yPos,width*2,3);
@@ -249,8 +297,8 @@ if(score3 % 3 == 0){
  p2 = -100;
   
   push();
-  
-  fill(255,0,0,70);
+  fill(218,1,128,70);
+  //fill(255,0,0,70);
   rectMode(CENTER);
   rect(e,height/2,width*2, 300);
   pop();
@@ -336,11 +384,30 @@ score3 = 0;
 
       p=p1;
     
+      if(score3 % 2 == 0){
+        push();
+        rectMode(CENTER);
+        fill(218,1,128, al)
+        //fill(255,0,0,al)
+        if(al > 0){
+      al -=9;
+        }
+      
+      if(al <= 0 ){
+   
+  
     
+      }
+       lr = 1100
+      // rect(lr,height/2,90,height)
+   
+   pop();
+      }
       push();
       noStroke();
       rectMode(CENTER);
-      fill(255,0,0,al)
+      fill(218,1,128, al);
+     // fill(255,0,0,al)
       if(al > 0){
     al -=9;
       }
@@ -352,7 +419,7 @@ score3 = 0;
     }
 
 
-    if(score3 % 3 !== 0){
+    if(score3 % 3 !== 0 && score3 % 2 !== 0){
       p = width;
       rect(p/2,p1,width*2,y2);
     
@@ -386,14 +453,24 @@ line4 = -100;
     }
 
     if(timer == 1){
+      if(score3 % 2 == 0){
+        push();
+        fill(255,0,0,90)
+        rectMode(CENTER);
+       lr = 1100
+       //rect(lr,height/2,90,height)
+   
+   pop();
+      }
       p1 = p1;
       shake = 50;
       push();
       p = width/2;
       rectMode(CENTER);
     noStroke();
-    fill(255,0,0,130,al)  
-    if(score3 % 3 !== 0){
+    fill(218,1,128,al);
+    //fill(255,0,0,130,al)  
+    if(score3 % 3 !== 0 && score3 % 2 !== 0){
 
       rect(p,p1,width,3);}
       //rect(e,yPos,width,3);
@@ -403,10 +480,12 @@ line4 = -100;
        p = -100;
        p1 = -100;
         push();
- 
-        fill(255,0,0,90);
+        fill(218,1,128, 90);
+        //fill(255,0,0,90);
         rectMode(CENTER);
+        imageMode(CENTER, CENTER);
         rect(e,height/2,width*2, 300);
+        //mage(laser,e,height/2,width*2,300);
         pop();
 
       } else {
@@ -444,7 +523,8 @@ if(timer2 == 0){
   push();
   rectMode(CENTER);
   noStroke();
-  fill(255,0,0,al)
+  fill(218,1,128,al);
+ // fill(255,0,0,al)
   //rect(0,yPos,width*2,y2);
   //rect(0,yPos+ 40,width*2,5);
   //rect(0,yPos+ 100,width*2,5);
@@ -454,7 +534,8 @@ if(timer2 == 0){
 if(score3 % 3 == 0 && timer == 0){
   push();
   wipeY = height/2;
-  fill(255,0,0,al)
+  fill(218,1,128,al)
+  //fill(255,0,0,al)
   rectMode(CENTER)
   rect(e,wipeY,width*2, 300)
   pop();
@@ -509,7 +590,9 @@ pop();
 
 function draw() {
 
-  background(0);
+  background("#45382B");
+
+
 if(mode == -1){
   for(let i = 0; i<startNum; i++){
 
@@ -521,7 +604,18 @@ if(mode == -1){
 
 }
 
+
+
 if(mode == 0){
+if(keyCode == DOWN_ARROW && real.isPaused){
+
+//real.play();
+
+} else {
+
+  real.pause();
+}
+
 
 for(let i = 0; i<startNum; i++){
 
@@ -533,33 +627,68 @@ for(let i = 0; i<startNum; i++){
 
 
 if(mode == 1){
+  for(let i = 0; i<bgNum; i++){
+
+    bg[i].display();
+  }
 
 
 
-for(let i = 0; i<bgNum; i++){
+  if(int(millis()/400) % 2 == 0 && songCount == 0){
+    for(var i = 0; i < pulseNum; i++){
+      pulse.push(new Pulse(pY,pY2))
+    
+    }
+  }
 
-  //bg[i].display();
-}
+  if(int(millis()/400) % 2 == 0 && songCount == 0){
+    translate(random(0,5), random(0,5));
+  alph = 255;
+  
+  
+for(let i = 0; i <pulseNum; i++){
+
+  pulse[i].display();
+  pulse[i].update(pY,pY2);
+  }
+  
+  } else {
+    translate(0,0);
+    alph -= 50;
+    if (alph <=0 ){
+      alph = 0;
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
 noStroke();
   push();
   textSize(20);
   fill(255);
-  text(score, 1100,80)
-  text(shake, 300,300)
+  //text(score, 1100,80)
+  //text(shake, 300,300)
   text(Math.abs(score3), 1200,80)
-  text(fram, 1100,100)
+ // text(fram, 1100,100)
   pop();
 push();
   fill(255);
   textSize(40);
-  text(timer, 1100,50)
-
+  //text(timer, 1100,50)
+//
 
   pop();
   push();
   textSize(40);
   fill(255,255,150)
-  text(timer2,1150, 50)
+ // text(timer2,1150, 50)
   pop();
 
 
@@ -570,23 +699,11 @@ push();
 let froom = frameCount % 30;
 
 
-for (var i = 0; i < attackNum2; i++) {
 
-  attackz[i].ult();
-  attackz[i].attack();
-
-  attackz[i].charge();
-  attackz[i].displayEnergy();
-if(keyIsDown(13)){
-  attackz[i].fade();
-
-}
-
-}
 push();
 fill(100,220,200)
 textSize(35);
-text(eTime, 1000, 100);
+//text(eTime, 1000, 100);
 
 pop();
 if(frameCount % 60 == 0 && eTime > 0){
@@ -608,6 +725,9 @@ elixr[i].checkGrab();
 elixr[i].reloadEnergy();
   
 }
+
+
+
   for (var i = 0; i < player.length; i++) {
 
     player[i].displayHealth();
@@ -621,6 +741,20 @@ elixr[i].reloadEnergy();
 
     attacks[i].display();
   }
+
+  for (var i = 0; i < attackNum2; i++) {
+
+
+    attackz[i].attack();
+    attackz[i].charge();
+    attackz[i].displayEnergy();
+  if(keyIsDown(13)){
+    attackz[i].fade();
+  
+  }
+  
+  }
+
   push();
   strokeWeight(20);
 stroke(0);
@@ -678,6 +812,9 @@ time();
   
     player[i].display();
     player[i].move();
+
+    player[i].updateTrail();
+    player[i].showTrail();
     if(hp <=0){
 
       player[i].gameOver();
@@ -730,6 +867,7 @@ if(keyIsDown(65)){
     player[i].attack();
 //print("attack");
   }
+
   for (var i = 0; i < wavesNum; i++) {
 
 
@@ -737,29 +875,43 @@ if(keyIsDown(65)){
     waves[i].checkCollision();
     waves[i].endPhase();
   }
+  for (var i = 0; i < attackNum2; i++) {
 
+    attackz[i].ult();
   
-
-
-if(phaseTwo){
-
-
-
-      
+  }
 
 
 
+if(frameCount % 60 == 0 && songCount > 0){
+songCount--;
 
 
+}
 
 
+  let mil = millis()/10; 
+push();
+fill(255);
+textSize(50);
+//text(songCount, 1100, height/2)
 
-  }  
+pop();
 
 
+push();
+fill(255);
+text(int(millis()/800), 100,100);
+  text(int(mil), 100,100);
+  pop();
+  if(int(mil) <50 && real.isPlaying() == false){
+    real.play();
+    
+    
+  } else {
 
 
-
+  }
 
 
 

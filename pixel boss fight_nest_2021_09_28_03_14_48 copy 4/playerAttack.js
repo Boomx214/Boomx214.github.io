@@ -10,6 +10,7 @@ this.g = map(i + millis()/1000, 0, 20, 0,255 );
 this.b = map(cos(frameCount + millis()/1000), -1, 1, 255, 0);
 this.ultimate = 0;
 this.ultTime = 5;
+this.duration = 0;
 for (var i = 0; i < elixrNum; i++) {
       
 this.energy = elixr[i].getEnergy();
@@ -58,7 +59,7 @@ for (var i = 0; i < player.length; i++) {
     push();
 rectMode(CENTER);
 fill(255);
-rect(this.eX+4.5,this.eY+28,34,11)
+rect(this.eX+4.5,this.eY+37,34,11)
 pop();
     push();
     fill(30,250,230);
@@ -66,7 +67,7 @@ pop();
   rectMode(CENTER);
 
 
-rect(this.eX+4.5,this.eY+28,this.energy/10,7)
+rect(this.eX+4.5,this.eY+37,this.energy/10,7)
 
 pop();
 
@@ -88,7 +89,7 @@ attack(){
 for (var i = 0; i < player.length; i++) {
       
   this.posY = player[i].getVal();
-  this.posX = width/2;
+  this.posX = player[i].getVal2();
     }
 
 
@@ -96,6 +97,7 @@ for (var i = 0; i < player.length; i++) {
 
 
   if(keyIsDown(13)){
+
     if(this.energy <= 0){
       this.energy = 0;
 
@@ -108,22 +110,23 @@ if(this.energy > 0 && this.energy <=400  && this.cooldown <= 0){
 this.energy -= 2;
 
 
-    this.y2 = sin(frameCount /2) * 20;
+    this.y2 = sin(frameCount / 2) * 10;
 
  stretch = width;
  push();
  this.alpha = 255;
  rectMode(CENTER);
+ imageMode(CENTER);
  fill(255,255,255, this.alpha);
- rect(this.posX,this.posY,stretch,this.y2);
-
+ rect(this.posX - 740,this.posY+5,stretch + 30,this.y2);
+//image(laser2,this.posX-750, this.posY,width + 50, (width - 1000)/12.5075)
  print('deez nuts'); 
  pop();
  push();
  for(i = 0; i < 10; i++){
-   fill(255,255,100,10);
+   fill(25,200,250,10);
    rectMode(CENTER);
-   rect(this.posX,this.posY, stretch, this.y2*3);
+   rect(this.posX -  740,this.posY+5, stretch, this.y2*3);
  }
 
 pop();
@@ -178,8 +181,21 @@ if(this.size >= 200){
   this.size = 200;
   if(this.energy > 0 && this.energy <=400  && this.cooldown <= 0){
 
-    translate(random(0,5), random(0,5));
-    
+    translate(random(0,30), random(0,30));
+    this.duration = 3;
+    if(frameCount % 60 == 0 && this.duration > 0){
+this.duration--;
+
+
+    }
+
+if(this.duration == 0){
+this.energy = 0;
+this.ultimate = 0;
+
+}
+
+
     }
   
     if(this.energy <= 0){
@@ -277,7 +293,7 @@ else {
 push();
 fill(255);
 textSize(20);
-text(this.size, 1000,200)
+//text(this.size, 1000,200)
 pop();
 
 }
@@ -287,20 +303,27 @@ ult(){
   push();
   fill(255);
   textSize(40);
-  text(this.ultimate + "%",width - 70, height/2 - 150 )
+  text(int(this.ultimate) + "%",width - 100, height/2 - 150 )
   rect(width - 70, height/2 - 140, 40,this.ultimate/0.33333333333);
   pop();
   push();
   fill(255);
   textSize(30);
-  text(this.ultTime, width - 70, height - 150)
+  //text(this.ultTime, width - 70, height - 150)
   pop();
 if(frameCount % 60 == 0 && this.ultTime > 0){
 this.ultTime--;
 
 
 }
-if(this.ultTime == 3){
+if(keyIsDown(13) && keyIsDown(67) == false && this.energy > 0 && this.posY < 634 && this.posY > 186){
+  this.ultimate += 0.1;
+
+}
+
+if(this.ultTime == 3 ){
+
+
 this.ultimate += 0.05;
 
 } if(this.ultTime == 0){
@@ -309,7 +332,7 @@ this.ultimate += 0.05;
 }
 
 if(this.ultimate >= 100){
-  this.ultimate = 0;
+  this.ultimate = 100;
 }
 
 }
@@ -344,8 +367,10 @@ for (let i = 0; i<10; i++){
 
   push();
   rectMode(CENTER)
+  imageMode(CENTER,CENTER);
   fill(100,250,255,10)
   rect(this.posX + 5,height/2,this.y2*2,height)
+//image(aura,this.posX,height/2,400,height)
 pop();
 
 }

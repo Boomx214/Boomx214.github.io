@@ -1,7 +1,7 @@
 class Player {
-    constructor() {
-        this.posX = 1100;
-        this.posY = 250;
+    constructor(x,y) {
+        this.posX = x; //1100;
+        this.posY = y; //250;
        this.speed = 8;
        this.health = 250;
        this.boost = 10;
@@ -11,21 +11,59 @@ class Player {
        this.round = 0;
        this.alpha = 255;
        this.energy = 400;
+       this.big = 110
        this.cIsDown == false;
+       this.history = [];
+       let v;
+       
 this.eHealth = 3000;
 this.isDamaged = false;
        distance = dist(this.posX,this.posY, p2,p1)
       }
 
 display(){
+    push();
+    text(this.posX + ", " + this.posY, this.posX, this.posY- 10)
+    pop();
   push();
-  strokeWeight(1.5);   
-  stroke(100, 20,250, 200);
-  fill(100, 20,250, 20);
-        rect(this.posX,this.posY , this.size, this.size);
 
+  strokeWeight(1.5);   
+  stroke(9,18,28);
+  fill(20, 42,68,20);
+        //rect(this.posX,this.posY , this.size, this.size);
+    
+image(ship,this.posX-40,this.posY-20,this.big,this.big/1.83333333333);
 pop();
 }
+
+
+
+
+updateTrail(){
+   let v = createVector(this.posX, this.posY);
+   
+    this.history.push(v);
+print(this.history.length)
+}
+
+
+
+showTrail(){
+    push();
+    fill(0);
+    ellipse(this.posX, this.posY, 20,20)
+    for(let i = 0; i < this.history.length; i++){
+        var pos = this.history[i];
+
+    ellipse(pos.posX,pos.posY, 10,10)
+    
+    }
+    pop();
+
+
+
+}
+
 
 
 
@@ -36,21 +74,21 @@ move(){
     
 this.cIsDown = false;
 
-    if(keyIsDown(UP_ARROW)  && this.posY >= 0 && keyIsDown(67) == false){
+    if(keyIsDown(38)  && this.posY >= 0 && keyIsDown(67) == false){
         this.posY -=this.speed;
       
       }
-      if(keyIsDown(DOWN_ARROW) && this.posY < height && keyIsDown(67) == false){
+      if(keyIsDown(40) && this.posY < height-20 && keyIsDown(67) == false){
         this.posY +=this.speed;
       
         }
       
-      if(keyIsDown(LEFT_ARROW) && this.posX > 1000 && keyIsDown(67) == false){
+      if(keyIsDown(37) && this.posX > 1000 && keyIsDown(67) == false){
       this.posX -=this.speed;
           
           }
       
-      if(keyIsDown(RIGHT_ARROW) && this.posX < width && keyIsDown(67) == false){
+      if(keyIsDown(39) && this.posX < width - 20 && keyIsDown(67) == false){
         this.posX +=this.speed
             
             }
@@ -96,14 +134,14 @@ text(this.boostCool, this.posX + 10, this.posY + 10)
 
 getVal(){
 
-return(this.posY +5);
+return(this.posY);
 
 
 
 }
 getVal2(){
 
-    return(this.posX +5);
+    return(this.posX);
     
     
     
@@ -131,7 +169,7 @@ this.health = 0;
 
 }
 if(collideOrNot){
-    //this.health -= 2;
+    this.health -= 2;
     if(this.health <= 0){
         this.health = 0;
         
@@ -162,11 +200,22 @@ if (collideOrNot== false){
 
 
 displayHealth(){
-push();
+    push();
+
 fill(255);
+
+rect(1045, height -85,360,50)
     textSize(20);
-    text(this.health,this.posX - 10, this.posY -10 );
+   // text(this.health,this.posX - 10, this.posY -10 );
 pop();
+push();
+fill(200,30,30);
+
+rect(1050, height -80,this.health/0.71428571428,40)
+
+pop();
+
+
 
 }
 

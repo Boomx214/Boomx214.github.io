@@ -20,10 +20,10 @@ text(this.timer, 20, 20)
 pop();
 
 
-    this.bpm = millis()/ 800;
+    this.bpm = millis()/ 300;
     text(int(this.bpm),width/2, height/2);
     if(int(this.bpm) % 1 == 0 && int(this.bpm) !== 0){
-      this.beat = frameCount % 24 / 2
+      this.beat = frameCount % 9.6 / 2
    
       
     } else {
@@ -88,7 +88,7 @@ if(this.fade <= 0 ){
     this.fade += this.fadeAmount;
 if(keyCode == DOWN_ARROW){
 mode = 1;
-
+leroy.pause();
 
 }
 
@@ -138,11 +138,11 @@ mode = 0;
 music(){
 if(keyCode == UP_ARROW){
 
-if(enter.isPlaying()){
-enter.pause();
+if(leroy.isPlaying()){
+leroy.pause();
 
 } else {
-    enter.play();
+    //leroy.play();
 }
 
 }

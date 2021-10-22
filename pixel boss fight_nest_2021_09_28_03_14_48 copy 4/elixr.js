@@ -20,7 +20,7 @@ this.isDisplaying = true;
 push();
 textSize(60);
 fill(255);
-    text(this.elixrCount, 1000,50);
+  //  text(this.elixrCount, 1000,50);
     pop();
     push();
     fill(30,230,200)

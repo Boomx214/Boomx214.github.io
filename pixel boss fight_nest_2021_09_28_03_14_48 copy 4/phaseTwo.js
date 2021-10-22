@@ -29,7 +29,7 @@ function Wave2() {
       this.helth = color(30,70,30)
       // size of ellipses 
         this.r = random(5, 30);
-    this.eHealth = 6000;
+    this.eHealth = 9000;
     this.damage = 0;
     this.timer = 2;
     
@@ -162,7 +162,7 @@ push();
 fill(255);
   textSize(40);
 
-  text("health: " + this.eHealth + "/" + "3000", 10,50);
+  text("health: " + this.eHealth + "/" + "9000", 10,50);
   
 pop();
 

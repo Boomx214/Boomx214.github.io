@@ -7,6 +7,15 @@ function Wave() {
     //meant for x position and creating the actual waves, needs for loop to work so only declared here
     this.height2 = random(80, height - 100);    
     this.x;
+const colors = [
+  "#B38969",
+  "#FFE1C9",
+  "#FFD3B1",
+
+
+
+]
+this.trail = 1035.00000047
         this.laserX; 
         this.laserY;
         this.laserHeight;
@@ -15,7 +24,9 @@ function Wave() {
       // altitiude of the waves
         this.altitude = random(1, 6);
       //color
-        this.c = random(255);
+        this.c = random(colors);
+        this.b = random(colors);
+        this.a = random(colors);
         this.d = 255;
         this.alpha = 0;
       //x position of waves
@@ -31,13 +42,13 @@ function Wave() {
       this.helth = color(30,70,30)
       // size of ellipses 
         this.r = random(10, 30);
-    this.eHealth = 4000;
+    this.eHealth = 9000;
     this.damage = 0;
     this.timer = 2;
     this.end  = 4;
     this.healthBar = 342;
     this.counter = 0;
-    
+    this.trail = 9000;
     //display function
       
       this.display = function() {
@@ -46,7 +57,10 @@ function Wave() {
         fill(this.c);
         //stroke is zero
         stroke(0);
+       // imageMode(CENTER);
         
+        image(boss,90,150, 600, 582);
+
         //loop I made to be able to use this.x to create a wave 
         for (var i = 0; i < this.num; i++) {
         //another basic ass for loop for number of waves
@@ -55,11 +69,11 @@ function Wave() {
           this.x = sin(i * 50 + millis()/600) * 20;
           //rect(i * 20 - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + height/2, this.r, this.r);
           noStroke();
-          ellipse(i * this.spread - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + this.height2, this.r);
+         //ellipse(i * this.spread - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + this.height2, this.r);
           push();
 
           fill(this.d,0,0,this.alpha);
-          ellipse(i * 40 - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + height/2, this.r);
+          //ellipse(i * 40 - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + height/2, this.r);
           pop();
         }
         
@@ -90,7 +104,12 @@ this.checkCollision = function(){
           this.cool = attackz[i].cooldown;
         }
   if(keyIsDown(13)){
-    if(this.e > 0 && this.cool <= 0){
+    for (var i = 0; i < player.length; i++) {
+      
+      this.pPosY = player[i].getVal();
+
+        }
+    if(this.e > 0 && this.cool <= 0 && this.pPosY < 634 && this.pPosY > 186){
       this.eHealth -= 5;
 
     }  else if(this.e <= 0 || this.cool > 0){
@@ -187,24 +206,36 @@ push();
 fill(0);
 strokeWeight(4);
 stroke(0);
-rect(135,16,461,40)
+rect(135,16,1035,40)
 pop();
+push();
 
+fill(255);
+rect(137.5,18.5,this.trail/8.69565217,35)
+ 
+
+  pop();
   push();
-fill(this.helth);
+fill("#4F1E4B");
 
   rect(137.5,18.5,this.eHealth/8.69565217,35)
   pop();
+
 push();
 fill(255);
-  textSize(40);
+  textSize(35);
 
-  text("health: " + this.eHealth + "/" + "4000", 10,50);
+  text("health:  " + this.eHealth + "/" + "9000", 10,50);
   
 pop();
 
+if(this.trail/8.69565217 > this.eHealth/8.69565217){
+  this.trail -= 1.5;
+  
+  
+  }
 
-
+}
 
 this.endPhase = function(){
 if(this.eHealth <= 0){
@@ -213,7 +244,7 @@ if(frameCount % 60 == 0 && this.end < 0){
 this.end--;
 
 }
-text(this.end, 1100, 400)
+//text(this.end, 1100, 400)
 
 if(this.end == 0){
 
@@ -239,7 +270,7 @@ if(this.end == 0){
     
     
     
-  }
+  
     
     
     
