@@ -36,12 +36,12 @@ rectMode(CENTER);
 textAlign(CENTER, CENTER);
 fill(255);
 textSize(100 - this.beat)
-text("idk what to name this thing", width/2 + 10, 200)
+text("the soon-to-be rythm game", width/2 + 10, 200)
 
 pop();
 push();
 fill(255)
-text("deez nuts lol", 150, 300)
+text(" ", 150, 300)
 pop();
 push();
 rectMode(CENTER);
@@ -101,6 +101,7 @@ push();
 textSize(30);
 textAlign(CENTER,CENTER);
 text("up arrow to begin", width/2, height/2);
+text("controls: " + "\nS is for ultimate (when left side bar hits 100% you can use it)" + "\nenter to attack and arrow keys to move." + "\n\nyou need to charge to be able to attack so hit c to charge" + "\nalso you need to hit c before the game allows you to move", width/2, height/2 - 200);
 pop();
 
 
