@@ -131,7 +131,7 @@ function setup() {
 
   }
   textFont(font);
-mode = 0;
+mode = -1;
 if(mode == -1){
 
   for(var i = 0; i < startNum; i++){
