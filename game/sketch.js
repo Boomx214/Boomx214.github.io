@@ -813,8 +813,8 @@ time();
     player[i].display();
     player[i].move();
 
-    player[i].updateTrail();
-    player[i].showTrail();
+    //player[i].updateTrail();
+    //player[i].showTrail();
     if(hp <=0){
 
       player[i].gameOver();
