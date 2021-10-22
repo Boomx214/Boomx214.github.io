@@ -30,7 +30,7 @@ let pY2;
 let pulse = [];
 let pulseNum = 1;
 let alph = 0;
-let songCount = 300;
+let songCount = 0;
 let back;
 let lr;
 let img;
@@ -131,7 +131,7 @@ function setup() {
 
   }
   textFont(font);
-mode = 1;
+mode = 0;
 if(mode == -1){
 
   for(var i = 0; i < startNum; i++){
