@@ -21,6 +21,19 @@ canvas {
   display: block;
 }
 
+
+
+
+
+#Xayre{
+position: absolute;
+left: 37rem;
+top: -31rem;
+font-size: 100px;
+}
+
+
+
 #lost{
 position:absolute;
 left: 20rem;
@@ -73,23 +86,32 @@ z-index:2;
 
 }
 #Portfolio:hover{
-  font-size: 25px;
   transition: 0.5s;
   color: #ffffff;
-
-  text-shadow: 0 0 10px #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
   
 
 
 }
 #Portfolio:hover a:after{
-  font-size: 16px;
   transition: 0.5s;
+  color: #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
   
 }
 #Portfolio2:hover a:after{
-  font-size: 16px;
   transition: 0.5s;
+  color: #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
   
 }
 
@@ -112,19 +134,21 @@ z-index:2;
 
 
 #Music:hover{
-  font-size: 25px;
   transition: 0.5s;
   color: #ffffff;
-
-  text-shadow: 0 0 10px #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
 
 }      
 #Music2:hover{
-  font-size: 25px;
   transition: 0.5s;
   color: #ffffff;
-
-  text-shadow: 0 0 10px #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
 
 }     
 
@@ -138,19 +162,21 @@ z-index:2;
   z-index:2;
       }
 #Home:hover{
-  font-size: 25px;
   transition: 0.5s;
   color: #ffffff;
-
-  text-shadow: 0 0 10px #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
 
 }
 #Home2:hover{
-  font-size: 25px;
   transition: 0.5s;
   color: #ffffff;
-
-  text-shadow: 0 0 10px #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
 
 }
 
@@ -163,19 +189,21 @@ z-index:2;
         }
 
        #About:hover{
-        font-size: 25px;
         transition: 0.5s;
         color: #ffffff;
-      
-        text-shadow: 0 0 10px #ffffff;
+        border: 0 none #ccc;
+      border-bottom: white;
+        border-style: solid;
+        border-radius: 0;
 
        } 
        #About2:hover{
-        font-size: 25px;
-        transition: 0.5s;
+      transition: 0.5s;
         color: #ffffff;
-      
-        text-shadow: 0 0 10px #ffffff;
+        border: 0 none #ccc;
+      border-bottom: white;
+        border-style: solid;
+        border-radius: 0;
 
        } 
           
@@ -211,12 +239,30 @@ z-index:1;
   z-index:2;
       }
 
-#home{
+#homed{
 position:absolute;
 left:43rem;
 top:25rem;
+
+
+
 z-index:2;
+
+
+
 }
+
+#homed:hover{
+  top:24.5rem;
+  transition: 0.5s;
+  color: #ffffff;
+  border: 0 none #ccc;
+border-bottom: white;
+  border-style: solid;
+  border-radius: 0;
+}
+
+
 
 
   #About2{
@@ -254,6 +300,20 @@ top: 16rem;
 left: 8rem;
 }
 
+.youtube{
+
+  position: absolute;
+
+  left: 1.4rem;
+top:2.6rem;
+
+}
+
+#links{
+position:absolute;
+
+z-index:1 ;
+}
 
 
 .greece{
@@ -295,13 +355,14 @@ color: white;
 
 position: absolute;
 left: 16rem;
+top:4.2rem;
 }
 
 .soundcloud{
   position: absolute;
 
   left: 13rem;
-
+top:4.2rem;
 } 
 
 .soundcloud:hover{
@@ -314,19 +375,20 @@ left: 16rem;
 
   position: absolute;
   left: 6.3rem;
+  top:4.2rem;
 }
 
 .itch{
   position: absolute;
 left: 9.5rem;
-top: 1.5rem;
+top: 4.2rem;
 
 }
 
 .spotify{
 position: absolute;
 left: 19rem;
-top: 1.3rem;
+top: 4rem;
 
 
 
