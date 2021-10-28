@@ -7,6 +7,8 @@ html, body {
   
 }
 
+
+
 button{
 width: 15rem;
 height: 15rem;
@@ -54,24 +56,80 @@ top:14.5rem;
 left:18rem;
 color:white;
 }
+#aboutme:hover{
+  font-size: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+
+  text-shadow: 0 0 10px #ffffff;
+}
 
 
 #Portfolio{
 position:absolute;
-top:-28.5rem;
+top:-24rem;
 left:-30rem;
 z-index:2;
 
+}
+#Portfolio:hover{
+  font-size: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+
+  text-shadow: 0 0 10px #ffffff;
+  
+
+
+}
+#Portfolio:hover a:after{
+  font-size: 16px;
+  transition: 0.5s;
+  
+}
+#Portfolio2:hover a:after{
+  font-size: 16px;
+  transition: 0.5s;
+  
 }
 
 
 #Music{
 
   position:absolute;
-  top:-30rem;
+  top: -27rem;
   left:-30rem;
+  display: block;
+
+/*border-radius: 50%;
+
+  color: #666;
+  
+
+  transition: .5s; */
   z-index:2;
-      }   
+      } 
+
+
+#Music:hover{
+  font-size: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+
+  text-shadow: 0 0 10px #ffffff;
+
+}      
+#Music2:hover{
+  font-size: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+
+  text-shadow: 0 0 10px #ffffff;
+
+}     
+
+
+
 #Home{
 
   position:absolute;
@@ -79,18 +137,47 @@ z-index:2;
   left:-30rem;
   z-index:2;
       }
+#Home:hover{
+  font-size: 25px;
+  transition: 0.5s;
+  color: #ffffff;
 
+  text-shadow: 0 0 10px #ffffff;
+
+}
+#Home2:hover{
+  font-size: 25px;
+  transition: 0.5s;
+  color: #ffffff;
+
+  text-shadow: 0 0 10px #ffffff;
+
+}
 
   #About{
   position: absolute;
   color: white;
   left: -30rem;
-  top: -31.5rem;
+  top: -30rem;
   z-index:2;
         }
 
-        
-          
+       #About:hover{
+        font-size: 25px;
+        transition: 0.5s;
+        color: #ffffff;
+      
+        text-shadow: 0 0 10px #ffffff;
+
+       } 
+       #About2:hover{
+        font-size: 25px;
+        transition: 0.5s;
+        color: #ffffff;
+      
+        text-shadow: 0 0 10px #ffffff;
+
+       } 
           
 #musicShowcase{
 
@@ -215,7 +302,13 @@ left: 16rem;
 
   left: 13rem;
 
+} 
+
+.soundcloud:hover{
+ 
+
 }
+
 
 .new{
 
