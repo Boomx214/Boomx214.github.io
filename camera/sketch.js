@@ -57,7 +57,7 @@ const songs = [
 //let d;
 function preload(){
   lost = loadSound('xxxbond.wav')
-  jaded = loadSound('jaded (w_ Kazukii).mp3');
+  jaded = loadSound('Akari - Aporia.mp3');
   tropicBerry = loadSound('Tropic Berry.mp3');
   foober = loadSound('foober pitch.mp3');
   evr = loadSound('Evr x Bond_4.wav');
