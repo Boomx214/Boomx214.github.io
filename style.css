@@ -3,9 +3,9 @@ html, body {
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 100%;
-  background-image: url("DSC_0502.png");
-  
+
 }
+
 
 
 
@@ -21,9 +21,36 @@ canvas {
   display: block;
 }
 
+#WIP{
+position:absolute;
+top:20rem;
+font-size: 10rem;
+left: 10rem;
+}
 
+#soundclouddis{
 
+position:absolute;
+top:15rem;
+left: 15rem;
+}
+#spotifydis{
+  position: absolute;
+  top:15rem;
+  left:35rem;
+}
 
+#artistpick{
+position: absolute;
+left:55rem;
+top:15rem;
+}
+
+#discography{
+position:relative;
+left:10rem;
+
+}
 
 #Xayre{
 position: absolute;
@@ -80,8 +107,8 @@ color:white;
 
 #Portfolio{
 position:absolute;
-top:-24rem;
-left:-30rem;
+top:2.5rem;
+left:80rem;
 z-index:2;
 
 }
@@ -105,7 +132,7 @@ border-bottom: white;
   border-radius: 0;
   
 }
-#Portfolio2:hover a:after{
+#Portfolio2:hover{
   transition: 0.5s;
   color: #ffffff;
   border: 0 none #ccc;
@@ -119,8 +146,8 @@ border-bottom: white;
 #Music{
 
   position:absolute;
-  top: -27rem;
-  left:-30rem;
+  top: 2.5rem;
+  left:60rem;
   display: block;
 
 /*border-radius: 50%;
@@ -152,13 +179,17 @@ border-bottom: white;
 
 }     
 
+#abt{
+position:absolute;
+top:6rem;
 
+}
 
 #Home{
 
   position:absolute;
-  top:-33rem;
-  left:-30rem;
+  top:2.5rem;
+  left:50rem;
   z-index:2;
       }
 #Home:hover{
@@ -183,8 +214,8 @@ border-bottom: white;
   #About{
   position: absolute;
   color: white;
-  left: -30rem;
-  top: -30rem;
+  left: 70rem;
+  top: 2.5rem;
   z-index:2;
         }
 
@@ -220,22 +251,22 @@ z-index:1;
 #Music2{
 
   position:absolute;
-  top:10rem;
-  left:6rem;
+  top:2.5rem;
+  left:70rem;
   z-index:2;
       }   
       #Portfolio2{
 
         position:absolute;
-        top:11.6rem;
-        left:6rem;
+        top:2.5rem;
+        left:80rem;
         z-index:2;
             }   
 #Home2{
 
   position:absolute;
-  top:7rem;
-  left:6rem;
+  top:2.5rem;
+  left:50rem;
   z-index:2;
       }
 
@@ -263,13 +294,19 @@ border-bottom: white;
 }
 
 
+#logo{
+position:absolute;
+top:-1rem;
+left: 3rem;
 
+
+}
 
   #About2{
   position: absolute;
   color: white;
-  left: 6rem;
-  top: 8.5rem;
+  left: 60rem;
+  top: 2.5rem;
   z-index:2;
         }
 
@@ -305,14 +342,18 @@ left: 8rem;
   position: absolute;
 
   left: 1.4rem;
-top:2.6rem;
+top:45.5rem;
 
 }
 
 #links{
 position:absolute;
 
+
+
+
 z-index:1 ;
+
 }
 
 
@@ -337,10 +378,17 @@ top: -35rem;
 left: 35.5rem;
 }
 
-img{
+#all{
+position:absolute;
+left: 4rem
+
+}
+
+.greece{
 
 position: absolute;
-top: -1.7rem;
+top: 10rem;
+left: 30rem;
 
 }
 
@@ -354,41 +402,37 @@ color: white;
 .twitter{
 
 position: absolute;
-left: 16rem;
-top:4.2rem;
+left: 60rem;
+top:47rem;
 }
 
 .soundcloud{
   position: absolute;
 
-  left: 13rem;
-top:4.2rem;
+  left: 75rem;
+top:47rem;
 } 
 
-.soundcloud:hover{
- 
-
-}
 
 
 .new{
 
   position: absolute;
-  left: 6.3rem;
-  top:4.2rem;
+  left: 17rem;
+  top:47rem;
 }
 
 .itch{
   position: absolute;
-left: 9.5rem;
-top: 4.2rem;
+left: 43rem;
+top: 47rem;
 
 }
 
 .spotify{
 position: absolute;
-left: 19rem;
-top: 4rem;
+left: 30rem;
+top: 46.6rem;
 
 
 
@@ -430,9 +474,9 @@ top:-30rem;
 .portfolio {
 position: absolute;
 left: 33rem;
-top: 5rem;
+top: 50rem;
 color: white;
-font-size: 3rem;
+font-size: 10rem;
 }
 
 .note {
