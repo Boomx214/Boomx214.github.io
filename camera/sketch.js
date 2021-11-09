@@ -160,13 +160,13 @@ function draw() {
   //These four lines draw the flipped video
   push();
   scale(-1, 1);
-  image(video, -640, 0, 640, 480);
+  //image(video, -640, 0, 640, 480);
   pop();
   
     background(0, 0, 0, 150);
   
   // We can call both functions to draw all keypoints and the skeletons
-  drawKeypoints();
+  //drawKeypoints();
   drawSkeleton();
 
   fill(0, 0, 255);
