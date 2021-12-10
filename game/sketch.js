@@ -1,21 +1,4 @@
-/////////useless//////
-let x1 = 1100;
-let y1 = 250;
-let obstacles = [];
-let obstNum = 30;
 
-let yw = 15;
-let bulletNum=10;
-//let bullets =[];
-let	mainTurrent;
-let turPosX = 1100;
-let turPosY = 250;
-let bulletExists = false;
-let bulletsFired = [];
-let line1 = -100;
-let line2 = -100;
-let line3 = - 100;
-let line4= -100;
 
 
 
@@ -30,7 +13,7 @@ let pY2;
 let pulse = [];
 let pulseNum = 1;
 let alph = 0;
-let songCount = 0;
+let songCount = 300;
 let back;
 let lr;
 let img;
@@ -89,6 +72,17 @@ let laser2;
 let font;
 let boss;
 let ship;
+let hit = [];
+let bossNum = 1;
+let tut = [];
+let tutNum = 1;
+let blip;
+let tutorialSong;
+let tutorial
+let b;
+
+let pause = [];
+let pauseNum = 1;
 const dead = [
 "GAME OVER LOOOOSERRR",
 "dang you're trash at this",
@@ -103,19 +97,23 @@ let wipeY = 2000;
 let yPos;
 
 function preload(){
+tutorialSong = loadSound("i think you should pick good and cool things not bad and stupid things.mp3");
+
+
+//blip = loadSound("8-bit Video Game (Shorter) Sound Effect")
 //soundFormats('mp3', 'wav');
-bong = loadSound('Taco Bell_Bong_SFX.mp3');
-enter = loadSound('space.mp3');
+//bong = loadSound('Taco Bell_Bong_SFX.mp3');
+//enter = loadSound('space.mp3');
 img = loadGif('lightning.gif')
-aura = loadGif('output-onlinegiftools-3.gif')
+//aura = loadGif('output-onlinegiftools-3.gif')
 laser = loadGif('output-onlinegiftools-2.gif')
-laser2 = loadGif('noemi-coute-laser.gif')
+
 font = loadFont('Minecraft.ttf')
-back = loadGif('Pixel-cave-city-OC-GIF-on-Imgur.gif')
-boss = loadGif('20dcae4d034b577df3e5e39daaf9cc03.gif');
-real = loadSound('Ecraze - Get Real (Crow REMIX).mp3')
-ship = loadGif('vehicle-1-preview.gif');
-leroy = loadSound("S2 E7 wants mom to know she looks cool and doesnt plan on changing.mp3");
+//back = loadGif('Pixel-cave-city-OC-GIF-on-Imgur.gif')
+//boss = loadGif('20dcae4d034b577df3e5e39daaf9cc03.gif');
+//real = loadSound('Ecraze - Get Real (Crow REMIX).mp3')
+//ship = loadGif('vehicle-1-preview.gif');
+
 }
 
 
@@ -131,8 +129,24 @@ function setup() {
 
   }
   textFont(font);
-mode = -1;
-if(mode == -1){
+mode = 0;
+
+
+for(let i = 0; i < pauseNum; i++){
+
+pause.push(new Pause(width - 40, 50));
+
+}
+
+for(var i = 0; i < tutNum; i++){
+tut.push(new Tutorial());
+
+
+}
+ 
+
+
+
 
   for(var i = 0; i < startNum; i++){
   start.push(new StartScreen());
@@ -142,24 +156,24 @@ if(mode == -1){
 
 
 
-}
-if(mode == 0){
-
-for(var i = 0; i < startNum; i++){
-start.push(new StartScreen());
 
 
-}
-
-
-
-}
 
 
 
 
   noStroke();
   //player = new Player(true, 300, 300, playerSize, 'r');
+
+for(var i =0; i < bossNum; i++){
+
+hit.push(new BossFight());
+
+}
+
+
+
+
   for (var i = 0; i < 10; i++){
 
   
@@ -212,16 +226,7 @@ start.push(new StartScreen());
 
 
 }
-function goCrazy(){
 
-if(al > 255 && timer == 0){
- 
-}
-
-
-
-
-}
 }
 /*
 function keyPressed() {
@@ -242,13 +247,9 @@ function time(){
 if(timer <=5 && timer > 0 && score3 % 3 == 0 && al < 255)
 {
 
-  wipeY = -2000;
-//p1 = -100;
-//p2 = -100;
-
 } else if(al >=255 && score3 % 3 == 0 && timer ==0 ){
 
-//wipeY = 250;
+
 
 
 } 
@@ -272,10 +273,7 @@ if(timer <=5 && timer > 0 && score3 % 3 == 0 && al < 255)
 
    if(score3 % 3 !== 0 && score3 % 2 !== 0){
      
-    p = width;
-    rectMode(CENTER);
-    rect(p/2,p1,width,3);
-   
+    
 
    }
 
@@ -292,23 +290,7 @@ pop();
     //rect(0,yPos,width,3);
     
     pop();
-if(score3 % 3 == 0){
- p1 = -100;
- p2 = -100;
-  
-  push();
-  fill(218,1,128,70);
-  //fill(255,0,0,70);
-  rectMode(CENTER);
-  rect(e,height/2,width*2, 300);
-  pop();
 
-} else {
- 
-  
-  p2 = 0;
-
-}
 
     }
   if(frameCount % 40 == 0 && timer > 0){
@@ -341,11 +323,11 @@ p2 = 0;
   }
   
   if(timer == 0){
-    if(bong.isP)
+  
     
 
 
-    goCrazy();
+
       y2 = sin(frameCount /2) * 20;
       let addition = 1;
 
@@ -462,31 +444,6 @@ line4 = -100;
    
    pop();
       }
-      p1 = p1;
-      shake = 50;
-      push();
-      p = width/2;
-      rectMode(CENTER);
-    noStroke();
-    fill(218,1,128,al);
-    //fill(255,0,0,130,al)  
-    if(score3 % 3 !== 0 && score3 % 2 !== 0){
-
-      rect(p,p1,width,3);}
-      //rect(e,yPos,width,3);
-      pop();
-      if(score3 % 3 == 0 ){
-        
-       p = -100;
-       p1 = -100;
-        push();
-        fill(218,1,128, 90);
-        //fill(255,0,0,90);
-        rectMode(CENTER);
-        imageMode(CENTER, CENTER);
-        rect(e,height/2,width*2, 300);
-        //mage(laser,e,height/2,width*2,300);
-        pop();
 
       } else {
 p;
@@ -505,44 +462,17 @@ timer2--;
 
  if(timer2 < 2 && timer > 0){
 
-  push();
-  noStroke();
-  fill(255,0,0,130);
-  //rect(0,yPos,width*2,5);
-  //rect(0,yPos+ 40,width*2,5);
-  //rect(0,yPos+ 100,width*2,5);
-  pop();
+
 
 
 
 }
 if(timer2 == 0){
 
-  y2 = sin(frameCount /2) * 20;
- 
-  push();
-  rectMode(CENTER);
-  noStroke();
-  fill(218,1,128,al);
- // fill(255,0,0,al)
-  //rect(0,yPos,width*2,y2);
-  //rect(0,yPos+ 40,width*2,5);
-  //rect(0,yPos+ 100,width*2,5);
-  pop();
-
-
-if(score3 % 3 == 0 && timer == 0){
-  push();
-  wipeY = height/2;
-  fill(218,1,128,al)
-  //fill(255,0,0,al)
-  rectMode(CENTER)
-  rect(e,wipeY,width*2, 300)
-  pop();
 
 } else{
 
-  wipeY = 2000;
+
 }
 
   
@@ -585,13 +515,31 @@ pop();
 
 }
 */
-  }
-} 
+
 
 function draw() {
 
   background("#45382B");
 
+
+if(mode == 5){
+for(let i = 0; i < tutNum; i++){
+tut[i].display();
+
+
+}
+
+for (var i = 0; i < player.length; i++) {
+
+  
+  player[i].display();
+  player[i].move();
+player[i].attack();
+
+}
+
+
+}
 
 if(mode == -1){
   for(let i = 0; i<startNum; i++){
@@ -605,16 +553,13 @@ if(mode == -1){
 }
 
 
+for(let i = 0; i < player.length; i++){
+
+
+
 
 if(mode == 0){
-if(keyCode == DOWN_ARROW && real.isPaused){
 
-//real.play();
-
-} else {
-
-  real.pause();
-}
 
 
 for(let i = 0; i<startNum; i++){
@@ -623,13 +568,13 @@ for(let i = 0; i<startNum; i++){
 }
 
 }
-
+}
 
 
 if(mode == 1){
   for(let i = 0; i<bgNum; i++){
 
-    bg[i].display();
+   // bg[i].display();
   }
 
 
@@ -675,21 +620,17 @@ noStroke();
   fill(255);
   //text(score, 1100,80)
   //text(shake, 300,300)
-  text(Math.abs(score3), 1200,80)
+  //text(Math.abs(score3), 1200,80)
  // text(fram, 1100,100)
   pop();
 push();
   fill(255);
   textSize(40);
-  //text(timer, 1100,50)
+
 //
 
   pop();
-  push();
-  textSize(40);
-  fill(255,255,150)
- // text(timer2,1150, 50)
-  pop();
+ 
 
 
 //rect(900,40,400,400);
@@ -807,6 +748,14 @@ time();
  //using push and pop to isolate the rectangle border so stroke doesnt go to the circles
 
 
+ push();
+  textSize(40);
+  fill(255,255,150)
+  //text(timer2,1150, 50)
+  //text(timer, 1100,100)
+  pop();
+
+
   for (var i = 0; i < player.length; i++) {
 
   
@@ -825,11 +774,8 @@ time();
 
 
 
-if(x1 == waves[0].x){
-health -= 50;
 
 
-}
 
 if(health == 0){
 
@@ -880,7 +826,11 @@ if(keyIsDown(65)){
     attackz[i].ult();
   
   }
+  for(var i =0; i < bossNum; i++){
 
+    hit[i].display();
+    hit[i].collide();
+    }
 
 
 if(frameCount % 60 == 0 && songCount > 0){
@@ -901,8 +851,8 @@ pop();
 
 push();
 fill(255);
-text(int(millis()/800), 100,100);
-  text(int(mil), 100,100);
+//text(int(millis()/800), 100,100);
+ // text(int(mil), 100,100);
   pop();
   if(int(mil) <50 && real.isPlaying() == false){
     real.play();
@@ -916,6 +866,13 @@ text(int(millis()/800), 100,100);
 
 
 }
+
+
+for(let i = 0; i < pauseNum; i++){
+pause[i].display();
+pause[i].pauseScreen();
+}
+
 }
 /*
 function mouseClicked(){

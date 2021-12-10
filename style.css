@@ -9,6 +9,7 @@ html, body {
 
 
 
+
 button{
 width: 15rem;
 height: 15rem;
@@ -21,11 +22,39 @@ canvas {
   display: block;
 }
 
+#gfx{
+position:absolute;
+top:50rem;
+left:50rem;
+}
+
+
+#lostart{
+position:absolute;
+left: 50rem;
+top:10rem;
+}
+
+#multilayer{
+position:absolute;
+left:3rem;
+top:7rem;
+}
+
+
 #WIP{
 position:absolute;
 top:20rem;
 font-size: 10rem;
 left: 10rem;
+}
+
+#wakeup{
+position: absolute;
+top:90rem;
+
+
+
 }
 
 #soundclouddis{
@@ -285,7 +314,36 @@ border-bottom: white;
         border-radius: 0;
 
        } 
+          #art{
+position:absolute;
+top: 2.5rem;
+
+right: 50rem;
+
+
+          }
+
+       #art:hover{
+        transition: 0.5s;
+        color: #ffffff;
+        border: 0 none #ccc;
+      border-bottom: white;
+        border-style: solid;
+        border-radius: 0;
+
+       } 
+       #art:hover{
+      transition: 0.5s;
+        color: #ffffff;
+        border: 0 none #ccc;
+      border-bottom: white;
+        border-style: solid;
+        border-radius: 0;
+
+       } 
           
+
+
 #musicShowcase{
 
 position:absolute;
@@ -346,7 +404,7 @@ border-bottom: white;
 position:absolute;
 top:-1rem;
 left: 3rem;
-
+z-index:1;
 
 }
 

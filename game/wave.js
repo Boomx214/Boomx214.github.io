@@ -59,7 +59,7 @@ this.trail = 1035.00000047
         stroke(0);
        // imageMode(CENTER);
         
-        image(boss,90,150, 600, 582);
+       // image(boss,90,150, 600, 582);
 
         //loop I made to be able to use this.x to create a wave 
         for (var i = 0; i < this.num; i++) {
@@ -69,7 +69,7 @@ this.trail = 1035.00000047
           this.x = sin(i * 50 + millis()/600) * 20;
           //rect(i * 20 - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + height/2, this.r, this.r);
           noStroke();
-         //ellipse(i * this.spread - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + this.height2, this.r);
+         ellipse(i * this.spread - this.x, this.amp * sin(radians(i * this.cf + this.theta)) + this.height2, this.r);
           push();
 
           fill(this.d,0,0,this.alpha);
@@ -103,7 +103,7 @@ this.checkCollision = function(){
 
           this.cool = attackz[i].cooldown;
         }
-  if(keyIsDown(13)){
+  if(keyIsDown(16)){
     for (var i = 0; i < player.length; i++) {
       
       this.pPosY = player[i].getVal();
@@ -123,7 +123,7 @@ this.eHealth -= 0;
 //this.healthBar -= 0.057
 //print(this.playY)
 
-  } else if(keyIsDown(13) && this.playY < 20 || this.playY > height - 10){
+  } else if(keyIsDown(16) && this.playY < 20 || this.playY > height - 10){
 //this.eHealth = this.eHealth;
 
 
@@ -206,7 +206,7 @@ push();
 fill(0);
 strokeWeight(4);
 stroke(0);
-rect(135,16,1035,40)
+rect(135,16,1040,40)
 pop();
 push();
 

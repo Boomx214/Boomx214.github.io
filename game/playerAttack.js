@@ -96,7 +96,7 @@ for (var i = 0; i < player.length; i++) {
 
 
 
-  if(keyIsDown(13)){
+  if(keyIsDown(16)){
 
     if(this.energy <= 0){
       this.energy = 0;
@@ -136,7 +136,7 @@ image(img,this.posX + 150,this.posY,1000,192);
 pop();
 }
 
-  } else if(keyIsDown(13) == false || this.cooldown > 0) {
+  } else if(keyIsDown(16) == false || this.cooldown > 0) {
     translate(random(0,0), random(0,0));
 this.y2 = 0; 
 
@@ -316,7 +316,7 @@ this.ultTime--;
 
 
 }
-if(keyIsDown(13) && keyIsDown(67) == false && this.energy > 0 && this.posY < 634 && this.posY > 186){
+if(keyIsDown(16) && keyIsDown(67) == false && this.energy > 0 && this.posY < 634 && this.posY > 186){
   this.ultimate += 0.1;
 
 }
@@ -353,7 +353,7 @@ charge(){
     this.posY = player[i].getVal();
     this.posX = player[i].getVal2();
       }
-      if((keyIsDown(67)) && keyIsDown(13) == false){
+      if((keyIsDown(67)) && keyIsDown(16) == false){
         for (var i = 0; i < elixrNum; i++) {
       
           this.energy = elixr[i].getEnergy();

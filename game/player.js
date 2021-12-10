@@ -30,9 +30,10 @@ display(){
   strokeWeight(1.5);   
   stroke(9,18,28);
   fill(20, 42,68,20);
-        //rect(this.posX,this.posY , this.size, this.size);
+
+    rect(this.posX-5,this.posY , this.size, this.size);
     
-image(ship,this.posX-40,this.posY-20,this.big,this.big/1.83333333333);
+//image(ship,this.posX-40,this.posY-20,this.big,this.big/1.83333333333);
 pop();
 }
 
@@ -51,11 +52,11 @@ print(this.history.length)
 showTrail(){
     push();
     fill(0);
-    ellipse(this.posX, this.posY, 20,20)
+    //ellipse(this.posX, this.posY, 20,20)
     for(let i = 0; i < this.history.length; i++){
         var pos = this.history[i];
 
-    ellipse(pos.posX,pos.posY, 10,10)
+    //ellipse(pos.posX,pos.posY, 10,10)
     
     }
     pop();
@@ -83,7 +84,7 @@ this.cIsDown = false;
       
         }
       
-      if(keyIsDown(37) && this.posX > 1000 && keyIsDown(67) == false){
+      if(keyIsDown(37) && this.posX > 900 && keyIsDown(67) == false){
       this.posX -=this.speed;
           
           }
@@ -152,7 +153,27 @@ goCrazy(){
 
 }
 
+getHealth(){
+return this.health;
+
+
+}
+
+
 checkCollide(){
+for(let i = 0; i < bossNum; i++){
+   var collideOrNot = collideRectRect(this.posX , this.posY,20,20,hit[i].laserX,hit[i].laserX2,50,50)
+
+
+if(collideOrNot){
+
+print("L")
+
+
+}
+}
+
+    /*
     var collideOrNot = collideRectRect(this.posX, this.posY, 20,20, p, p1, width, y2);
    var collideOrDeez = collideRectRect(this.posX, this.posY, 20,20, e, wipeY,width*2, 300);
  
@@ -165,9 +186,9 @@ print("nuts");
 
 if(this.health <= 0){
 this.health = 0;
+*/
 
-
-}
+/*
 if(collideOrNot){
     this.health -= 2;
     if(this.health <= 0){
@@ -177,19 +198,11 @@ if(collideOrNot){
         }
     
 }
-
-} 
+*/
+}
 
 dodge(){
-if (collideOrNot== false){
 
-    for (var i = 0; i < wavesNum; i++) {
-       waves[i].checkCollide();
-       
-        
-      }
-
-}
 
 
 }

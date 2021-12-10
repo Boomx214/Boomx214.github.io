@@ -10,10 +10,10 @@ display(){
     push(); 
     //fill(255);
     fill(218,1,128, alph);
-    fill(255,0,0,alph)
+    //fill(255,0,0,alph)
     rectMode(CENTER);
     //rect(width/2,this.y, width,20);
-   // rect(width/2,this.y2, width,20);
+    //rect(width/2,this.y2, width,20);
     pop()
 
 

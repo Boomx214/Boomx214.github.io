@@ -28,7 +28,7 @@ fill(255);
 pop();
 
 
-if(keyIsDown(13)){
+if(keyIsDown(16)){
     if(this.energy <= 0){
       this.energy = 0;
       
