@@ -35,6 +35,24 @@ left: 50rem;
 top:10rem;
 }
 
+#depth{
+  position:absolute;
+  left: 50rem;
+  top:30rem;
+  }
+  #aora{
+    position:absolute;
+    left: 3rem;
+    top:62rem;
+    }
+
+    #cherry{
+      position:absolute;
+      left: 50rem;
+      top:85rem;
+      }
+
+
 #multilayer{
 position:absolute;
 left:3rem;
@@ -48,6 +66,9 @@ top:20rem;
 font-size: 10rem;
 left: 10rem;
 }
+
+
+
 
 #wakeup{
 position: absolute;
