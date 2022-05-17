@@ -1,23 +1,31 @@
-// casey conchinha - @kcconch ( https://github.com/kcconch )
-// louise lessel - @louiselessel ( https://github.com/louiselessel )
-// more p5.js + shader examples: https://itp-xstory.github.io/p5js-shaders/
-// this is a modification of a shader by adam ferriss
-// https://github.com/aferriss/p5jsShaderExamples/tree/gh-pages/2_texture-coordinates/2-1_basic
+// Author: Inigo Quiles
+// Title: Expo
 
+#ifdef GL_ES
 precision mediump float;
-uniform float mouseX;
+#endif
+
+#define PI 3.14159265359
+
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
 uniform float frameCount;
-// this is the same variable we declared in the vertex shader
-// we need to declare it here too!
 varying vec2 vTexCoord;
 
+float plot(vec2 st, float pct){
+  return  smoothstep( pct-0.02, pct, st.y) -
+          smoothstep( pct, pct+0.02, st.y);
+}
+
 void main() {
-    
-    // copy the vTexCoord
-    // vTexCoord is a value that goes from 0.0 - 1.0 depending on the pixels location
-    // we can use it to access every pixel on the screen
-    vec2 coord = vTexCoord;
-    
-    // x values for red, y values for green, both for blue
-    gl_FragColor = vec4(coord.x, coord.y, sin(frameCount + coord.x+coord.y), 1.0 );
+    vec2 st = vTexCoord;
+    float y = sin(PI * frameCount + st.x);
+
+    vec3 color = vec3(y);
+
+    float pct = plot(st,y);
+    color = (1.0-pct)*color+pct*vec3(0.0,1.0,0.0);
+
+    gl_FragColor = vec4(color,1.0);
 }
